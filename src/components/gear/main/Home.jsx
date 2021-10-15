@@ -7,8 +7,7 @@ function Home() {
          <div className='mainSect'>
             <div className='mainJogack'><List1/></div>
             <div className='mainJogack'></div>
-            <div className='mainJogack'></div>
-            <div className='mainJogack'></div>
+            <div className='mainJo'></div>
          </div>
          <SideBar/>
       </div>

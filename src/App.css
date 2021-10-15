@@ -75,12 +75,20 @@
 .mainSect{
    display: flex;
    width: 80%;
+   border: 1px lightgrey solid;
    flex-wrap: wrap;
 }
 .mainJogack{
-   margin: 1px;
-   width: 49.6%;
+   margin-right: 2px;
+   width: 49.79%;
+   height: 550px;
    background-color: lightgreen;
+}
+.mainJo{
+   width: 100%;
+   background-color: lightgreen;
+   margin: 2px 2px 0 0;
+   height: 550px;
 }
 .SideBar{
    border: 1px lightgrey solid;
