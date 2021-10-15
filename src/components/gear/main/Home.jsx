@@ -5,7 +5,10 @@ function Home() {
    return (
       <div className='homehwamyun'>
          <div className='mainSect'>
-            <List1/>
+            <div className='mainJogack'><List1/></div>
+            <div className='mainJogack'></div>
+            <div className='mainJogack'></div>
+            <div className='mainJogack'></div>
          </div>
          <SideBar/>
       </div>

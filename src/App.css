@@ -10,19 +10,20 @@
 /*************************Topline********************************/
 .Topline{
    width: 100%;
-   height: 300px;
+   height: 250px;
    display: flex;
    flex-direction: column;
-
 }
 .daemunIMG{
    display: flex;
    justify-content: center;
    align-items: center;
    width: 100%;
-   height: 250px;
+   border: 1px lightgrey solid;
+   height: 200px;
 }
 .quickLink{
+   margin-top: 2px;
    width: 100%;
    height: 50px;
    display: flex;
@@ -72,30 +73,98 @@
    flex-wrap: wrap;
 }
 .mainSect{
-   width: 83%;
+   display: flex;
+   width: 80%;
+   flex-wrap: wrap;
+}
+.mainJogack{
+   margin: 1px;
+   width: 49.6%;
+   background-color: lightgreen;
 }
 .SideBar{
-   width: 17%;
+   border: 1px lightgrey solid;
+   padding: 2px;
+   width: 20%;
 }
 .Profiles{
    width: 100%;
    margin-bottom: 8px;
 }
 .menuvertical{
-   height: 300px;
+   height: 370px;
 }
 .menuvertical>ul{
-   background-color: tomato;
-   height: 280px;
    display: flex;
+   background-color: lightgreen;
+   border-radius: 5px;
    flex-direction: column;
-   transition: 0.5s;
 }
-.menuvertical>ul>li{
+.slideVetical>li:hover{
+   background-color: lightpink;
+}
+.sliderItems{
    margin-bottom: 8px;
    list-style: none;
-   height: 32px;
+   background-color: lightgreen;
+   height: 40px;
+   transition: 0.25s;
+   display: flex;
+   border-radius: 5px;
+   padding: 0 5px;
 }
-
+.sliderItems>div{
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.sliderItem{
+   margin-bottom: 8px;
+   list-style: none;
+   background-color: lightgreen;
+   display: flex;
+   border-radius: 5px;
+   padding: 0 5px;
+   height: 150px;
+   flex-wrap: wrap;
+   list-style: none;
+   overflow-y: hidden;
+   transition: 0.25s;
+}
+.sliderItem>div:nth-child(1){
+   width: 50%;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.sliderItem>span{
+   width: 50%;
+   display: flex;
+   height: 40px;
+   padding-right: 5px;
+   justify-content: flex-end;
+   align-items: center;
+   cursor: pointer;
+}
+.sliderItem>div:nth-child(3){
+   width: 100%;
+   padding-top: 5px;
+}
+.sliderItem>div>ul>li{
+   list-style: none;
+   width: 100%;
+   height: 35px;
+   padding-left: 15%;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   transition: 0.25s;
+   margin: 0 0 5px 0%;
+}
+.sliderItem>div>ul>li:hover{
+   background-color: lightgreen;
+}
 /***************************homehwamyun END***********************/
 

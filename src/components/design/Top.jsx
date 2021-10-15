@@ -1,5 +1,6 @@
 import React from 'react'
-import {FaSearch} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { FaSearch } from 'react-icons/fa'
 function Top() {
    return (
       <div className='Topline'>
@@ -8,7 +9,7 @@ function Top() {
          </div>
          <nav className='quickLink'>
             <ul>
-               <li>1</li>
+               <li><Link to={"/login"}>login</Link></li>
                <li>2</li>
                <li>3</li>
                <li>4</li>
@@ -16,7 +17,7 @@ function Top() {
             <div className='DBsearch'>
                <input type="text" />
                <span>
-                  <FaSearch/>
+                  <FaSearch />
                </span>
             </div>
          </nav>
