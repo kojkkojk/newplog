@@ -1,0 +1,101 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+.App{
+   margin: 10px 17% 10px 17%;
+   min-height: 100vh;
+}
+/*************************Topline********************************/
+.Topline{
+   width: 100%;
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+
+}
+.daemunIMG{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 250px;
+}
+.quickLink{
+   width: 100%;
+   height: 50px;
+   display: flex;
+   background-color: bisque;
+}
+.quickLink>ul{
+   display: flex;
+   width: 75%;
+}
+.quickLink>ul>li{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 25%;
+   list-style: none;
+}
+.DBsearch{
+   width: 25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.DBsearch>input{
+   width: 80%;
+   border-radius: 5px;
+   height: 35px;
+   padding: 10px;
+}
+.DBsearch>span{
+   margin: 0 5px;
+   color: white;
+   height: 35px;
+   display: flex;
+   justify-content: center;
+   border-radius: 5px;
+   align-items: center;
+   width: 15%;
+   background-color: indianred;
+}
+/***************************Topline END***************************/
+/***************************homehwamyun***************************/
+.homehwamyun{
+   margin-top: 15px;
+   min-height: 75vh;
+   padding: 10px;
+   display: flex;
+   flex-wrap: wrap;
+}
+.mainSect{
+   width: 83%;
+}
+.SideBar{
+   width: 17%;
+}
+.Profiles{
+   width: 100%;
+   margin-bottom: 8px;
+}
+.menuvertical{
+   height: 300px;
+}
+.menuvertical>ul{
+   background-color: tomato;
+   height: 280px;
+   display: flex;
+   flex-direction: column;
+   transition: 0.5s;
+}
+.menuvertical>ul>li{
+   margin-bottom: 8px;
+   list-style: none;
+   height: 32px;
+}
+
+/***************************homehwamyun END***********************/
+
