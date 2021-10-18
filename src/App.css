@@ -1,7 +1,37 @@
+@font-face {
+   font-family: 'twaysky';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'Wemakeprice-Bold';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'GowunBatang-Regular';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'EliceDigitalBaeum_Bold';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+}
+.domNavLinks{
+   text-decoration: none;
+   color: white;
+   font-family: 'EliceDigitalBaeum_Bold';
+   text-transform: uppercase;
 }
 .App{
    margin: 10px 17% 10px 17%;
@@ -27,7 +57,7 @@
    width: 100%;
    height: 50px;
    display: flex;
-   background-color: bisque;
+   background-color: grey;
 }
 .quickLink>ul{
    display: flex;
@@ -50,43 +80,47 @@
    width: 80%;
    border-radius: 5px;
    height: 35px;
-   padding: 10px;
+   padding: 15px;
+   border: 1px solid lightgrey;
+}
+.DBsearch>input:focus{
+   outline-width: inherit;
 }
 .DBsearch>span{
    margin: 0 5px;
-   color: white;
+   cursor: pointer;
    height: 35px;
    display: flex;
    justify-content: center;
    border-radius: 5px;
    align-items: center;
    width: 15%;
-   background-color: indianred;
+   background-color: rgb(59, 238, 134);
 }
 /***************************Topline END***************************/
 /***************************homehwamyun***************************/
 .homehwamyun{
-   margin-top: 15px;
+   margin-top: 10px;
    min-height: 75vh;
    padding: 10px;
    display: flex;
+   border: 1px lightgrey solid;
    flex-wrap: wrap;
 }
 .mainSect{
    display: flex;
    width: 80%;
-   border: 1px lightgrey solid;
    flex-wrap: wrap;
 }
 .mainJogack{
    margin-right: 2px;
    width: 49.79%;
+   border: 1px lightgrey solid;
    height: 550px;
-   background-color: lightgreen;
 }
 .mainJo{
    width: 100%;
-   background-color: lightgreen;
+   border: 1px lightgrey solid;
    margin: 2px 2px 0 0;
    height: 550px;
 }
@@ -100,25 +134,22 @@
    margin-bottom: 8px;
 }
 .menuvertical{
-   height: 370px;
+   height: 570px;
 }
 .menuvertical>ul{
    display: flex;
-   background-color: lightgreen;
    border-radius: 5px;
    flex-direction: column;
-}
-.slideVetical>li:hover{
-   background-color: lightpink;
 }
 .sliderItems{
    margin-bottom: 8px;
    list-style: none;
-   background-color: lightgreen;
    height: 40px;
    transition: 0.25s;
    display: flex;
+   background-color: aliceblue;
    border-radius: 5px;
+   cursor: pointer;
    padding: 0 5px;
 }
 .sliderItems>div{
@@ -130,7 +161,7 @@
 .sliderItem{
    margin-bottom: 8px;
    list-style: none;
-   background-color: lightgreen;
+   background-color: aliceblue;
    display: flex;
    border-radius: 5px;
    padding: 0 5px;
@@ -139,6 +170,7 @@
    list-style: none;
    overflow-y: hidden;
    transition: 0.25s;
+   cursor: pointer;
 }
 .sliderItem>div:nth-child(1){
    width: 50%;
@@ -147,18 +179,16 @@
    justify-content: center;
    align-items: center;
 }
-.sliderItem>span{
+.sliderItem>div:nth-child(2){
    width: 50%;
    display: flex;
    height: 40px;
    padding-right: 5px;
    justify-content: flex-end;
    align-items: center;
-   cursor: pointer;
 }
 .sliderItem>div:nth-child(3){
    width: 100%;
-   padding-top: 5px;
 }
 .sliderItem>div>ul>li{
    list-style: none;
@@ -170,9 +200,80 @@
    align-items: center;
    transition: 0.25s;
    margin: 0 0 5px 0%;
+   border-radius: 5px;
+   cursor: pointer;
 }
-.sliderItem>div>ul>li:hover{
-   background-color: lightgreen;
+.Ads{
+   height: 250px;
 }
 /***************************homehwamyun END***********************/
-
+/**************************bbsThumb******************************/
+.bbsThumb{
+   padding: 0 9.5px;
+   height: 220px;
+}
+.bbsLists{
+   display: flex;
+   align-items: center;
+   height: 35px;
+   padding: 0 9.5px;
+   border-radius: 5px;
+   border: 1px lightgrey solid;
+   margin-bottom: 5px;
+}
+/*************************bbsThumb END*************************/
+/**************************LoginPage***************************/
+.LoginPage{
+   width: 100%;
+   margin-top: 10px;
+   border: 1px lightgrey solid;
+   height: 70vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Wemakeprice-Bold';
+}
+.loginform{
+   width: 35%;
+}
+.loginform>div{
+   width: 100%;
+}
+.loginform>.loginput>input{
+   width: 100%;
+   height: 50px;
+   border-radius: 8px;
+   border: 1px rgb(65, 185, 255) solid;
+   transition: 0.25s;
+   padding-left: 15px;
+}
+.loginform>.loginput>label{
+   margin-bottom: 5px;
+   text-transform: uppercase;
+   color: lightslategray;
+}
+.loginput{   
+   height: 100px;
+   margin: 10px 0;
+}
+.loginton{
+   height: 85px;
+   margin-top: 10px;
+}
+.loginton>input{
+   border: none;
+   border-radius: 8px;
+   width: 100%;
+   height: 50px;
+   border: none;
+   background-color: rgb(55, 123, 248);
+   color: white;
+   font-size: larger;
+   cursor: pointer;
+   text-transform: uppercase;
+}
+.loginform>div>.loginInput:focus{
+   height: 60px;
+   outline-width: inherit;
+}
+/***************************LoginPage END**********************/

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import {FaChevronDown,FaChevronUp} from 'react-icons/fa'
+import {FaChevronDown,FaChevronUp} from 'react-icons/fa';
+import Ads from '../design/Ads'
 const listyle={
    height:"40px"
 }
 function SideBar() {
-   const [OnOff, setOnOff] = useState(true);
+   const [OnOff, setOnOff] = useState(false);
+   const [OnOff2, setOnOff2] = useState(false);
 
    return (
       <div className='SideBar'>
@@ -18,7 +20,17 @@ function SideBar() {
                <li className='sliderItems'><div>Nintendo</div></li>
                <li className='sliderItem' style={OnOff ? {} : listyle}>
                   <div>Nintendo</div>
-                  <span onClick={() => { setOnOff(!OnOff) }}>{OnOff ? <FaChevronUp/> : <FaChevronDown/>}</span>
+                  <div onClick={() => { setOnOff(!OnOff) }}>{OnOff ? <FaChevronUp/> : <FaChevronDown/>}</div>
+                  <div>
+                     <ul>
+                        <li>123</li>
+                        <li>456</li>
+                     </ul>
+                  </div>
+               </li>
+               <li className='sliderItem' style={OnOff2 ? {} : listyle}>
+                  <div>Nintendo</div>
+                  <div onClick={() => { setOnOff2(!OnOff2) }}>{OnOff2 ? <FaChevronUp/> : <FaChevronDown/>}</div>
                   <div>
                      <ul>
                         <li>123</li>
@@ -27,12 +39,9 @@ function SideBar() {
                   </div>
                </li>
                <li className='sliderItems'><div>Nintendo</div></li>
-               <li className='sliderItems'><div>Nintendo</div></li>
             </ul>
          </div>
-         <div className='Profiles'>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, numquam perferendis ipsum sapiente expedita sint</p>
-         </div>
+         <Ads/>
       </div>
    )
 }

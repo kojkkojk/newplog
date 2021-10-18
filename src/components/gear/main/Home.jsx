@@ -5,11 +5,20 @@ function Home() {
    return (
       <div className='homehwamyun'>
          <div className='mainSect'>
-            <div className='mainJogack'><List1/></div>
-            <div className='mainJogack'></div>
-            <div className='mainJo'></div>
+            <div className='mainJogack'>
+               <h2 style={{ textAlign: "center" }}>BBS title</h2>
+               <List1 />
+            </div>
+            <div className='mainJogack'>
+               <h2 style={{ textAlign: "center" }}>BBS title</h2>
+
+            </div>
+            <div className='mainJo'>
+               <h2 style={{ textAlign: "center" }}>BBS title</h2>
+               
+            </div>
          </div>
-         <SideBar/>
+         <SideBar />
       </div>
    )
 }

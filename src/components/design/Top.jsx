@@ -9,10 +9,10 @@ function Top() {
          </div>
          <nav className='quickLink'>
             <ul>
-               <li><Link to={"/login"}>login</Link></li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
+               <li><Link className='domNavLinks' to={"/"}>Home</Link></li>
+               <li><Link className='domNavLinks' to={"/"}>Home</Link></li>
+               <li><Link className='domNavLinks' to={"/"}>Home</Link></li>
+               <li><Link className='domNavLinks' to={"/login"}>login</Link></li>
             </ul>
             <div className='DBsearch'>
                <input type="text" />
