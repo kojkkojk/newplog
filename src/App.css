@@ -4,6 +4,19 @@
    font-weight: normal;
    font-style: normal;
 }
+@import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+@font-face {
+   font-family: 'KyoboHand';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'Y_Spotlight';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
 @font-face {
    font-family: 'Wemakeprice-Bold';
    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');
@@ -22,14 +35,47 @@
    font-weight: normal;
    font-style: normal;
 }
+@font-face {
+   font-family: 'HangeulNuri-Bold';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'Pretendard-Regular';
+   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+   font-weight: 400;
+   font-style: normal;
+}
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
+.pagination{
+   display: flex;
+   width: 100%;
+   height: 45px;
+   justify-content: center;
+   align-items: center;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+}
+.pagination>li{
+   list-style: none;
+   width: 40px;
+   height: 40px;
+   margin: 0 5px;
+   display: flex;
+   font-weight: 600;
+   border: 1px solid lightgray;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
 .domNavLinks{
    text-decoration: none;
-   color: white;
+   color: black;
    font-family: 'EliceDigitalBaeum_Bold';
    text-transform: uppercase;
 }
@@ -37,108 +83,26 @@
    margin: 10px 17% 10px 17%;
    min-height: 100vh;
 }
-/*************************Topline********************************/
-.Topline{
-   width: 100%;
-   height: 250px;
-   display: flex;
-   flex-direction: column;
-}
 .daemunIMG{
    display: flex;
    justify-content: center;
    align-items: center;
    width: 100%;
-   border: 1px lightgrey solid;
    height: 200px;
-}
-.quickLink{
-   margin-top: 2px;
-   width: 100%;
-   height: 50px;
-   display: flex;
-   background-color: grey;
-}
-.quickLink>ul{
-   display: flex;
-   width: 75%;
-}
-.quickLink>ul>li{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 25%;
-   list-style: none;
-}
-.DBsearch{
-   width: 25%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.DBsearch>input{
-   width: 80%;
-   border-radius: 5px;
-   height: 35px;
-   padding: 15px;
-   border: 1px solid lightgrey;
-}
-.DBsearch>input:focus{
-   outline-width: inherit;
-}
-.DBsearch>span{
-   margin: 0 5px;
-   cursor: pointer;
-   height: 35px;
-   display: flex;
-   justify-content: center;
-   border-radius: 5px;
-   align-items: center;
-   width: 15%;
-   background-color: rgb(59, 238, 134);
-}
-/***************************Topline END***************************/
-/***************************homehwamyun***************************/
-.homehwamyun{
-   margin-top: 10px;
-   min-height: 75vh;
-   padding: 10px;
-   display: flex;
-   border: 1px lightgrey solid;
-   flex-wrap: wrap;
-}
-.mainSect{
-   display: flex;
-   width: 80%;
-   flex-wrap: wrap;
-}
-.mainJogack{
-   margin-right: 2px;
-   width: 49.79%;
-   border: 1px lightgrey solid;
-   height: 550px;
-}
-.mainJo{
-   width: 100%;
-   border: 1px lightgrey solid;
-   margin: 2px 2px 0 0;
-   height: 550px;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .SideBar{
-   border: 1px lightgrey solid;
-   padding: 2px;
    width: 20%;
-}
-.Profiles{
-   width: 100%;
-   margin-bottom: 8px;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .menuvertical{
-   height: 570px;
+   height: 500px;
+   padding: 0 0 0 5px ;
 }
 .menuvertical>ul{
    display: flex;
-   border-radius: 5px;
    flex-direction: column;
 }
 .sliderItems{
@@ -147,25 +111,22 @@
    height: 40px;
    transition: 0.25s;
    display: flex;
-   background-color: aliceblue;
-   border-radius: 5px;
    cursor: pointer;
    padding: 0 5px;
 }
 .sliderItems>div{
    width: 50%;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
+   padding-left: 13px;
 }
 .sliderItem{
    margin-bottom: 8px;
    list-style: none;
-   background-color: aliceblue;
    display: flex;
-   border-radius: 5px;
    padding: 0 5px;
-   height: 150px;
+   height: 250px;
    flex-wrap: wrap;
    list-style: none;
    overflow-y: hidden;
@@ -176,7 +137,8 @@
    width: 50%;
    height: 40px;
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
+   padding-left: 13px;
    align-items: center;
 }
 .sliderItem>div:nth-child(2){
@@ -200,33 +162,105 @@
    align-items: center;
    transition: 0.25s;
    margin: 0 0 5px 0%;
-   border-radius: 5px;
    cursor: pointer;
+}
+.sliderItem>div>ul>li:hover{
+   background: rgba(158, 158, 158, 0.473);
 }
 .Ads{
    height: 250px;
 }
+/***************************homehwamyun***************************/
+.homehwamyun{
+   margin-top: 20px;
+   min-height: 76vh;
+   display: flex;
+   flex-wrap: wrap;
+}
+.mainSect{
+   display: flex;
+   width: 80%;
+   flex-wrap: wrap;
+   padding: 0 3.45px;
+}
+.mainJogack{
+   margin-right: 2px;
+   width: 49.79%;
+   height: 400px;
+}
+.mainJo{
+   width: 100%;
+   margin: 2px 2px 0 0;
+   height: 550px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
 /***************************homehwamyun END***********************/
 /**************************bbsThumb******************************/
 .bbsThumb{
-   padding: 0 9.5px;
-   height: 220px;
+   height: 255px;
+   border-left: 1px lightgrey solid;
+   border-bottom: 1px lightgrey solid;
+   border-right: 1px lightgrey solid;
+   margin: 0 5px;
+   padding: 0 5px;
+   background-image: url("https://firebasestorage.googleapis.com/v0/b/plogprojects.appspot.com/o/borders-frames-notepad-backgrounds-powerpoint.jpg?alt=media&token=64895d90-4643-42d6-a6dd-261dd83ab865");
+   background-position: center;
+   background-size: cover;
+   font-family: 'KyoboHand';
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+}
+.bbsThumb>div:nth-child(1){
+   margin-bottom: 5px;
+   padding: 0 5px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   height: 25px;
+   font-family: 'EliceDigitalBaeum_Bold';
+}
+.bbsTitles{
+   height: 40px;
+   padding-left: 10px;
+   font-family: 'Iropke Batang', serif; 
+   background-color: lightgray;
+   color: white;
+   text-shadow: 2px 1px 2px rgba(150, 150, 150, 1);
+   margin: 0 2px;
+}
+.bbsTitles>span{
+   float: right;
+   height: 100%;
+   margin-right: 15px;
+}
+.bbsTitles::before{
+   content: "📌 ";
 }
 .bbsLists{
    display: flex;
    align-items: center;
    height: 35px;
    padding: 0 9.5px;
-   border-radius: 5px;
-   border: 1px lightgrey solid;
-   margin-bottom: 5px;
+   font-size: large;
+   border: 1px rgba(0, 0, 0, 0.767) dotted;
+   margin-bottom: 7px;
+}
+.bbsLINKs{
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 400;
+   color: lightseagreen;
+}
+.bbsanchor{
+   text-decoration: none;
+   color: black;
 }
 /*************************bbsThumb END*************************/
 /**************************LoginPage***************************/
 .LoginPage{
-   width: 100%;
-   margin-top: 10px;
-   border: 1px lightgrey solid;
+   width: 80%;
    height: 70vh;
    display: flex;
    justify-content: center;
@@ -234,10 +268,7 @@
    font-family: 'Wemakeprice-Bold';
 }
 .loginform{
-   width: 35%;
-}
-.loginform>div{
-   width: 100%;
+   width: 55%;
 }
 .loginform>.loginput>input{
    width: 100%;
@@ -275,5 +306,35 @@
 .loginform>div>.loginInput:focus{
    height: 60px;
    outline-width: inherit;
+   font-size: x-large;
 }
 /***************************LoginPage END**********************/
+/**********************noticePage******************************/
+.noticePage{
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+   padding: 0 15px;
+}
+.bbsTable{
+   height: 900px;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+   margin-bottom: 12.3px;
+}
+.listContents{
+   margin: 2px 5px 8px 5px;
+   height: 75px;
+   padding: 5px;
+   border: 1px lightgrey solid;
+}
+.bbsTitle{
+   height: 65px;
+   color: white;
+   background: lightgrey;
+   text-shadow: 2px 1px 2px rgba(150, 150, 150, 1);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+/*********************noticePage END**************************/

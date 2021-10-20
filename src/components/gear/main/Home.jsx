@@ -1,25 +1,20 @@
 import React from 'react';
-import SideBar from '../../design/SideBar'
-import List1 from '../sub/List1'
+import List from '../sub/List';
+
 function Home() {
    return (
-      <div className='homehwamyun'>
          <div className='mainSect'>
             <div className='mainJogack'>
-               <h2 style={{ textAlign: "center" }}>BBS title</h2>
-               <List1 />
+               <h2 className='bbsTitles'><span>Notice</span></h2>
+               <List bbsName={"bbs1"} path={"notice"}/>
             </div>
             <div className='mainJogack'>
-               <h2 style={{ textAlign: "center" }}>BBS title</h2>
-
+               <h2 className='bbsTitles'><span>BBS title</span></h2>
+               <List bbsName={"bbs2"} path={"bbs"}/>
             </div>
             <div className='mainJo'>
-               <h2 style={{ textAlign: "center" }}>BBS title</h2>
-               
             </div>
          </div>
-         <SideBar />
-      </div>
    )
 }
 
