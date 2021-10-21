@@ -6,11 +6,11 @@ function Home() {
          <div className='mainSect'>
             <div className='mainJogack'>
                <h2 className='bbsTitles'><span>Notice</span></h2>
-               <List bbsName={"bbs1"} path={"notice"}/>
+               <List bbsName={"bbs1"} path={"notice"} queryString={"noticeId"}/>
             </div>
             <div className='mainJogack'>
                <h2 className='bbsTitles'><span>BBS title</span></h2>
-               <List bbsName={"bbs2"} path={"bbs"}/>
+               <List bbsName={"bbs2"} path={"freeBoard"} queryString={"bbsId"}/>
             </div>
             <div className='mainJo'>
             </div>

@@ -4,7 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import Pagination from './Pagination';
 import { Link } from 'react-router-dom';
 
-function Pagenate({ bbsType,bbsTitle,path }) {
+function Pagenate({ bbsType,bbsTitle,path,queryString }) {
    const db = getDocs(collection(firestore, "BBS", `STORY/${bbsType}`));
    const [posts, setPosts] = useState([]);
    const [allPosts, setAllPosts] = useState([])
@@ -29,6 +29,8 @@ function Pagenate({ bbsType,bbsTitle,path }) {
 
    useEffect(() => {
       dbLinks();
+   console.log("loop? Pagenate");
+
    }, [currentPage])
 
    return (
@@ -38,7 +40,7 @@ function Pagenate({ bbsType,bbsTitle,path }) {
             {posts.length > 0 &&
                posts.map((data, index) => (
                   <div className='listContents' key={index}>
-                    <h4><Link className='bbsanchor' to={`/${path}?noticeId=${data[0]}`}>{data[1].title}</Link></h4>
+                    <h4><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{data[1].title}</Link></h4>
                   </div>
                ))
             }

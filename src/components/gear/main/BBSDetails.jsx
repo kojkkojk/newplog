@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { doc, getDoc } from "firebase/firestore";
 import { firestore } from '../../../configs/firebase'
 
-function NoticeDetail({docId}) {
+function BBSDetails({bbsType,docId}) {
    const [document, setDocument] = useState({ title: "loading...", desc: "loading...",writer:"loading..." })
-   const dbRef = doc(firestore,"BBS/STORY/bbs1",`${docId}`)
+   const dbRef = doc(firestore,`BBS/STORY/${bbsType}`,`${docId}`)
    const docSnap = getDoc(dbRef);
+
    useEffect(() => {
       docSnap.then(data=>{
          setDocument(data.data());
       })
+   console.log("loop? BBSDetails");
+   console.log(document);
    }, [])
-
-
    return (
       <div className='noticePage'>
          <h2>{document.title}</h2>
@@ -22,4 +23,4 @@ function NoticeDetail({docId}) {
    )
 }
 
-export default NoticeDetail 
+export default BBSDetails 

@@ -99,11 +99,14 @@
 }
 .menuvertical{
    height: 500px;
-   padding: 0 0 0 5px ;
+   padding: 20px 0 0 5px ;
 }
 .menuvertical>ul{
    display: flex;
    flex-direction: column;
+}
+.menuvertical>ul>li:hover{
+   background: rgba(158, 158, 158, 0.473);
 }
 .sliderItems{
    margin-bottom: 8px;
@@ -126,7 +129,7 @@
    list-style: none;
    display: flex;
    padding: 0 5px;
-   height: 250px;
+   height: 240px;
    flex-wrap: wrap;
    list-style: none;
    overflow-y: hidden;
@@ -165,7 +168,7 @@
    cursor: pointer;
 }
 .sliderItem>div>ul>li:hover{
-   background: rgba(158, 158, 158, 0.473);
+   background: white
 }
 .Ads{
    height: 250px;

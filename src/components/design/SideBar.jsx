@@ -21,7 +21,7 @@ function SideBar() {
                   <div>
                      <ul>
                         <li><Link className='domNavLinks' to={"/notice"}>공지</Link></li>
-                        <li><Link className='domNavLinks' to={"/notice"}>공지</Link></li>
+                        <li><Link className='domNavLinks' to={"/freeBoard"}>자유게시판</Link></li>
                         <li><Link className='domNavLinks' to={"/notice"}>공지</Link></li>
                         <li>456</li>
                      </ul>
