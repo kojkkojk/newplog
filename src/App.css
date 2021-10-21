@@ -47,6 +47,9 @@
    font-weight: 400;
    font-style: normal;
 }
+.ck-editor__editable:not(.ck-editor__nested-editable) {
+   min-height: 400px;
+}
 *{
    margin: 0;
    padding: 0;
@@ -58,8 +61,6 @@
    height: 45px;
    justify-content: center;
    align-items: center;
-   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
-   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .pagination>li{
    list-style: none;
@@ -68,10 +69,11 @@
    margin: 0 5px;
    display: flex;
    font-weight: 600;
-   border: 1px solid lightgray;
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .domNavLinks{
    text-decoration: none;
@@ -85,12 +87,22 @@
 }
 .daemunIMG{
    display: flex;
+   font-family: 'EliceDigitalBaeum_Bold';
    justify-content: center;
+   font-size: 5rem;
    align-items: center;
+   text-shadow: 2px 1px 2px rgb(0, 0, 0);
    width: 100%;
+   background-image: url("https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80");
+   background-position: center;
+   background-size: cover;
    height: 200px;
    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+}
+.daemunIMG>a{
+   color: white;
+   text-decoration: none;
 }
 .SideBar{
    width: 20%;
@@ -245,9 +257,8 @@
    display: flex;
    align-items: center;
    height: 35px;
-   padding: 0 9.5px;
+   padding:  0 9.5px 0 42px;
    font-size: large;
-   border: 1px rgba(0, 0, 0, 0.767) dotted;
    margin-bottom: 7px;
 }
 .bbsLINKs{
@@ -269,6 +280,8 @@
    justify-content: center;
    align-items: center;
    font-family: 'Wemakeprice-Bold';
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .loginform{
    width: 55%;
@@ -320,13 +333,12 @@
    padding: 0 15px;
 }
 .bbsTable{
-   height: 900px;
+   height: 880px;
    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
    margin-bottom: 12.3px;
 }
 .listContents{
-   margin: 2px 5px 8px 5px;
    height: 75px;
    padding: 5px;
    border: 1px lightgrey solid;
@@ -339,5 +351,14 @@
    display: flex;
    justify-content: center;
    align-items: center;
+}
+.bbsTabless{
+   width: 100%;
+}
+.bbsTabless>thead>tr>th{
+   margin: 5px;
+   padding: 5px;
+   border: 1px lightgrey solid;
+
 }
 /*********************noticePage END**************************/

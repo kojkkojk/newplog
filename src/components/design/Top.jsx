@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 function Top() {
    return (
       <div className='daemunIMG'>
-         <h1>SAMPLE TEXT</h1>
+         <Link to={"/"}>
+            Blue Lemon
+         </Link>
       </div>
    )
 }

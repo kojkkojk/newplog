@@ -6,15 +6,21 @@ import reportWebVitals from './reportWebVitals';
 //React-router
 import { BrowserRouter as Router } from 'react-router-dom';
 //Redux
-import {store} from './redux/store'
-import {Provider} from 'react-redux'
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+
+const persistor = persistStore(store)
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <PersistGate persistor={persistor}>
+        <Router>
+          <App />
+        </Router>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('ploged')

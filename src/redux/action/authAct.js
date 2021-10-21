@@ -1,14 +1,14 @@
-import {LOGOUT_USER,LOGIN_USER} from '../type';
+import { LOGOUT_USER, LOGIN_USER } from '../type';
 
-export const loginUser = (userData)=>{
+export const loginUser = (userData) => {
    return {
-      type:LOGIN_USER,
-      payload:userData
+      type: LOGIN_USER,
+      payload: userData
    }
 }
 
-export const logoutUser = ()=>{
+export const logoutUser = () => {
    return {
-      type:LOGOUT_USER
+      type: LOGOUT_USER
    }
 }

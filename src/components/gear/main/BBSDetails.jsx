@@ -11,8 +11,6 @@ function BBSDetails({bbsType,docId}) {
       docSnap.then(data=>{
          setDocument(data.data());
       })
-   console.log("loop? BBSDetails");
-   console.log(document);
    }, [])
    return (
       <div className='noticePage'>

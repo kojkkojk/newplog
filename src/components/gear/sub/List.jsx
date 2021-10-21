@@ -24,8 +24,6 @@ function List({bbsName,path,queryString}) {
          let a = emptyArr.slice(0,5)
          setListData(a)
       })
-   console.log("loop? List");
-
    }, [])
    
    return (

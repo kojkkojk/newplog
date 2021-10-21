@@ -10,7 +10,7 @@ function Home() {
             </div>
             <div className='mainJogack'>
                <h2 className='bbsTitles'><span>BBS title</span></h2>
-               <List bbsName={"bbs2"} path={"freeBoard"} queryString={"bbsId"}/>
+               <List bbsName={"bbs2"} path={"freeBoard"} queryString={"freebbs"}/>
             </div>
             <div className='mainJo'>
             </div>
