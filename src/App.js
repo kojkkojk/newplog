@@ -20,7 +20,7 @@ function App() {
   const query = useQuery();
   const auth = getAuth();
   const [userOn, setUserOn] = useState(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       setUserOn(user)

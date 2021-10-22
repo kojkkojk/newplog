@@ -48,7 +48,8 @@
    font-style: normal;
 }
 .ck-editor__editable:not(.ck-editor__nested-editable) {
-   min-height: 400px;
+   height: 400px;
+   overflow: scroll;
 }
 *{
    margin: 0;
@@ -141,11 +142,11 @@
    list-style: none;
    display: flex;
    padding: 0 5px;
-   height: 240px;
+   height: 200px;
    flex-wrap: wrap;
    list-style: none;
    overflow-y: hidden;
-   transition: 0.25s;
+   transition: 0.35s;
    cursor: pointer;
 }
 .sliderItem>div:nth-child(1){
@@ -333,15 +334,21 @@
    padding: 0 15px;
 }
 .bbsTable{
-   height: 880px;
+   display: flex;
+   flex-direction: column;
+   height: 670px;
    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
    margin-bottom: 12.3px;
 }
 .listContents{
-   height: 75px;
-   padding: 5px;
-   border: 1px lightgrey solid;
+   height: 55px;
+   text-align: center;
+   border-bottom: 1px lightgray solid;
+}
+.listContents:nth-child(2){
+   text-align: left;
+   padding-left: 45px;
 }
 .bbsTitle{
    height: 65px;
@@ -353,12 +360,25 @@
    align-items: center;
 }
 .bbsTabless{
-   width: 100%;
+   width: 100%;    
+   border-spacing: 0px;
+   padding: 0 5px 5px 5px;
+}
+.bbsTabless>thead>tr{
+   vertical-align: inherit;
 }
 .bbsTabless>thead>tr>th{
    margin: 5px;
    padding: 5px;
-   border: 1px lightgrey solid;
-
 }
 /*********************noticePage END**************************/
+/****************************WriteSect***********************/
+.WriteSect{
+   width: 80%;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+}
+.editorsSect{
+   margin: 0 15px;
+}
+/**************************WriteSect END*********************/

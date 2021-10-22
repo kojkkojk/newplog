@@ -38,15 +38,13 @@ function Pagenate({ bbsType, bbsTitle, path, queryString }) {
             <table className='bbsTabless'>
                <colgroup>
                   <col width={"10%"} />
-                  <col width={"50%"} />
-                  <col width={"15%"} />
-                  <col width={"15%"} />
+                  <col width={"70%"} />
+                  <col width={"20%"} />
                </colgroup>
                <thead>
                   <tr>
                      <th>분류</th>
                      <th>제목</th>
-                     <th>작성자</th>
                      <th>날짜</th>
                   </tr>
                </thead>
@@ -59,7 +57,6 @@ function Pagenate({ bbsType, bbsTitle, path, queryString }) {
                               <h3><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{data[1].title}</Link></h3>
                            </td>
                            <td className='listContents'>{data[1].writer}</td>
-                           <td className='listContents'></td>
                         </tr>
                      ))
                   }

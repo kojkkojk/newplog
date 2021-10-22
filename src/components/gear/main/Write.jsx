@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Editor5 from '../../design/Editor5'
+import { useSelector } from 'react-redux';
+
 function Write() {
+   const [contents, setContents] = useState("");
+   const currentContent = useSelector(state => state.createReducer.content);
+   useEffect(() => {
+      setContents(currentContent)
+   }, [currentContent])
    return (
-      <div className='mainSect'>
-         <Editor5/>
+      <div className='WriteSect'>
+         <div className='contentsTitle'>
+            <input type="text" />
+         </div>
+         <div className='editorsSect'>
+            <Editor5 />
+         </div>
       </div>
    )
 }

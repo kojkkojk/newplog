@@ -17,9 +17,6 @@ function SideBar(props) {
    }
    return (
       <div className='SideBar'>
-         <div className='Profiles'>
-
-         </div>
          <div className='menuvertical'>
             <ul className='slideVetical'>
                <li className='sliderItems'><div><Link className='domNavLinks' to={"/"}>home</Link></div></li>
@@ -36,7 +33,6 @@ function SideBar(props) {
                         <li><Link className='domNavLinks' to={"/notice"}>공지</Link></li>
                         <li><Link className='domNavLinks' to={"/freeBoard"}>자유게시판</Link></li>
                         <li><Link className='domNavLinks' to={"/notice"}>공지</Link></li>
-                        <li>456</li>
                      </ul>
                   </div>
                </li>
