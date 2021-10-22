@@ -11,6 +11,7 @@ function Write() {
    return (
       <div className='WriteSect'>
          <div className='contentsTitle'>
+            <h2>title</h2>
             <input type="text" />
          </div>
          <div className='editorsSect'>
