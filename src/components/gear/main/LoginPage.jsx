@@ -15,7 +15,7 @@ function LoginPage() {
          [e.target.name]: e.target.value
       })
    }
-   const history = useHistory()
+   const history = useHistory();
    const loginFunc = async(data)=>{
       await signInWithEmailAndPassword(auth,data.email,data.password).then(userData=>{
          setLoading(true)
@@ -47,7 +47,6 @@ function LoginPage() {
             </div>
             <div className='loginton'>
                <input className='loginbutton' disabled={loading} type="submit" value="login" />
-               <div style={{ marginTop: "25px" }}> <Link style={{ color: "grey", textDecoration: "none" }} to="/join">회원가입 페이지로</Link></div>
                {errors && <p>{errors}</p>}
             </div>
          </form>

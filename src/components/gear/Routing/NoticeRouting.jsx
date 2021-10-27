@@ -1,12 +1,12 @@
 import React from 'react'
 import BBSboard from '../main/BBSboard';
 import BBSDetails from '../main/BBSDetails';
-function NoticeRouting({noticeId}) {
+function NoticeRouting({noticeId,userOn}) {
    
    return (
       <>
        {noticeId ?
-         <BBSDetails docId={noticeId} bbsType={"bbs1"}/>
+         <BBSDetails docId={noticeId} bbsType={"bbs1"} path={"notice"} userOn={userOn} queryString={"contentid"}/>
       : 
       <BBSboard
       bbsType={"bbs1"}

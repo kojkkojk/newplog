@@ -22,7 +22,7 @@ const editorConfiguration = {
    ]
 };
 
-const Editor5 = () => {
+const Editor5 = (props) => {
    const dispatch = useDispatch();
    const writeSave = (contents)=>{
       dispatch(createContents(contents));
@@ -32,7 +32,7 @@ const Editor5 = () => {
          <CKEditor
             editor={Editor}
             config={editorConfiguration}
-            data=""
+            data={props.data}
             onBlur={(event, editor) => {
                const data = editor.getData();
                writeSave(data)

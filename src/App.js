@@ -8,6 +8,8 @@ import NoticeRouting from './components/gear/Routing/NoticeRouting';
 import PublicRoute from './components/gear/Public-Private/PublicRoute';
 import Write from './components/gear/main/Write';
 import PrivateRoute from './components/gear/Public-Private/PrivateRoute';
+import Update from './components/gear/main/Update';
+import Prologue from './components/gear/sub/Prologue';
 /*Modules*/
 import { useQuery } from './configs/querySetting';
 import { Switch, Route } from 'react-router-dom';
@@ -35,8 +37,11 @@ function App() {
           <Route exact path="/" component={Home} />
           <PublicRoute restricted={true} component={LoginPage} path={"/login"} exact></PublicRoute>
           <PrivateRoute component={Write} path="/create" exact></PrivateRoute>
-          <Route path={"/notice"} ><NoticeRouting noticeId={query.get("noticeId")} /></Route>
-          <Route path={"/freeBoard"}><BBSRouting bbsId={query.get("freebbs")} /></Route>
+          <PrivateRoute render={()=>{<Update contentsIndex={query.get("contentid")}/>}} path="/update/:updateIndex" exact></PrivateRoute>
+          <Route path={"/notice"} ><NoticeRouting userOn={userOn} noticeId={query.get("noticeId")} /></Route>
+          <Route path={"/freeBoard"}><BBSRouting userOn={userOn} bbsId={query.get("freebbs")} /></Route>
+          <Route path={"/prologue"}><Prologue/></Route>
+          <Route path={"/"}>404 ERORR</Route>
         </Switch>
         <SideBar userOn={userOn}/>
       </div>

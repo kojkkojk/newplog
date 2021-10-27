@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 function Top() {
    return (
-      <div className='daemunIMG'>
-         <Link to={"/"}>
-            Blue Lemon
-         </Link>
-      </div>
+      <Link className='daemunIMGLINK' to={"/"}>
+         <div className='daemunIMG'>
+            00000000
+         </div>
+      </Link>
    )
 }
 

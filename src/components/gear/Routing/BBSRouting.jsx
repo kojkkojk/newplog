@@ -1,11 +1,11 @@
 import React from 'react'
 import BBSboard from '../main/BBSboard';
 import BBSDetails from '../main/BBSDetails';
-function BBSRouting({bbsId}) {
+function BBSRouting({bbsId,userOn}) {
    return (
       <>
          {bbsId ?
-         <BBSDetails docId={bbsId} bbsType={"bbs2"}/> 
+         <BBSDetails docId={bbsId} bbsType={"bbs2"} path={"freeBoard"} queryString={"contentid"} userOn={userOn}/> 
          :
          <BBSboard
          bbsType={"bbs2"}

@@ -3,6 +3,7 @@ import { firestore } from '../../../configs/firebase';
 import { collection, getDocs } from "firebase/firestore";
 import Pagination from './Pagination';
 import { Link } from 'react-router-dom';
+import Table from 'react-bootstrap/Table';
 
 function Pagenate({ bbsType, bbsTitle, path, queryString }) {
    const db = getDocs(collection(firestore, "BBS", `STORY/${bbsType}`));
@@ -35,14 +36,14 @@ function Pagenate({ bbsType, bbsTitle, path, queryString }) {
       <>
          <div className='bbsTable'>
             <h2 className='bbsTitle'><span>{bbsTitle}</span></h2>
-            <table className='bbsTabless'>
+            <Table className='bbsTabless' striped bordered>
                <colgroup>
                   <col width={"10%"} />
                   <col width={"70%"} />
                   <col width={"20%"} />
                </colgroup>
                <thead>
-                  <tr>
+                  <tr style={{textAlign:"center"}}>
                      <th>분류</th>
                      <th>제목</th>
                      <th>날짜</th>
@@ -51,17 +52,17 @@ function Pagenate({ bbsType, bbsTitle, path, queryString }) {
                <tbody>
                   {posts.length > 0 &&
                      posts.map((data, index) => (
-                        <tr>
+                        <tr key={index}>
                            <td className='listContents'>{data[1].index}</td>
-                           <td className='listContents' key={index}>
+                           <td className='listContents'>
                               <h3><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{data[1].title}</Link></h3>
                            </td>
-                           <td className='listContents'>{data[1].writer}</td>
+                           <td className='listContents'>{data[1].date}</td>
                         </tr>
                      ))
                   }
                </tbody>
-            </table>
+            </Table>
          </div>
          <Pagination
             postPerPage={postPerPage}
