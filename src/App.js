@@ -12,7 +12,6 @@ import Update from './components/gear/main/Update';
 import IMGUpload from './components/gear/main/IMGUpload';
 import GalleryRouting from './components/gear/Routing/GalleryRouting';
 import Prologue from './components/gear/sub/Prologue';
-import InfiniteScrolled from './components/gear/main/InfiniteScrolled'
 /*Modules*/
 import { useQuery } from './configs/querySetting';
 import { Switch, Route } from 'react-router-dom';
@@ -46,7 +45,6 @@ function App() {
           <Route path={"/gallery"} ><GalleryRouting userOn={userOn} galleryId={query.get("galleryId")}/></Route>
           <Route path={"/freeBoard"}><BBSRouting userOn={userOn} bbsId={query.get("freebbs")} /></Route>
           <Route path={"/prologue"}><Prologue/></Route>
-          <Route path={"/InfiniteScrolled"}><InfiniteScrolled/></Route>
           <Route path={"/"}>404 ERORR</Route>
         </Switch>
         <SideBar userOn={userOn}/>

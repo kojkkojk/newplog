@@ -102,7 +102,17 @@ let a = [
 ]
 
 let b = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-let dolls = [['라이언',5], ['어피치',3], ['콘',2], ['무지',3], ['프로도',3]];
 
-console.table(dolls);
-console.log(dolls[0][1]); // 5 반환
+let c = b.slice(0,4);
+let d = b.slice(4,8);
+let e = b.slice(8,12)
+let f = b.slice(12,16)
+let g = b.slice(16,20)
+let h = b.slice(20,24)
+
+console.log(c);
+console.log(d);
+console.log(e);
+console.log(f);
+console.log(g);
+console.log(h);

@@ -1,11 +1,14 @@
 import React, { useEffect, useState ,useRef} from 'react'
-import axios from 'axios';
-import { apiIMGURL, apiKey, apiURL } from '../../../configs/data'
-function InfiniteScrolled() {
+import { firestore } from '../../../configs/firebase';
+import { collection, getDocs } from "firebase/firestore";
+import { Link,useHistory } from 'react-router-dom'
+
+function Gallerys() {   
+   const db = getDocs(collection(firestore, "BBS", `STORY/bbs3`));
    const [loading, setLoading] = useState(true); // 로딩중인지 아닌지를 담기위한 state
+   const [AllinstaData, setAllInstaData] = useState([]); // API로부터 받아온 내 피드 데이터를 배열에 저장
    const [instaData, setInstaData] = useState([]); // API로부터 받아온 내 피드 데이터를 배열에 저장
-   // const [instaPaging, setInstaPaging] = useState < IPagingData > ({ next: undefined }); // API로부터 받아온 다음 페이지 데이터를 저장
-   const [currentPage, setCrrentPage] = useState(1)
+   const [currentPage, setCrrentPage] = useState(3)
    const [fetching, setFetching] = useState(false); // 추가 데이터를 로드하는지 아닌지를 담기위한 state
    const messageEl = useRef(null);
 
@@ -18,14 +21,19 @@ function InfiniteScrolled() {
       }
     }, [])
 
-   const fetchData = async (endPoint) => {
+   const fetchData = async () => {
       // 로딩중인 상태로 전환
       setLoading(true);
-      await axios.get(endPoint).then(res => {
-         // GET 요청으로 받아온 데이터를 state에 잘 넣어줍니다
-         setInstaData(res.data.results);
+      await db.then(data => {
+         let emptyArr = []
+         data.forEach((doc) => {
+            emptyArr.push([doc.id, doc.data()])
+         })
+         emptyArr.sort((a, b) => b[1].index - a[1].index)
+         setAllInstaData(emptyArr)
+         let a = emptyArr.slice(0, currentPage)
+         setInstaData(a);
       }).catch(e => console.log(e))
-
       // 로딩중이지 않은 상태로 전환
       setLoading(false);
    }
@@ -33,36 +41,35 @@ function InfiniteScrolled() {
    const fetchMoreInstaFeeds = async () => {
       // 추가 데이터를 로드하는 상태로 전환
       setFetching(true);
+      const fetchedData = AllinstaData.slice(currentPage,(currentPage+currentPage))
       // API로부터 받아온 페이징 데이터를 이용해 다음 데이터를 로드
-      const endPoint = `${apiURL}movie/popular?api_key=${apiKey}&language=ko&page=${currentPage + 1}`
-      await axios.get(endPoint)
-         .then((response) => {
-            const fetchedData = response.data.results; // 피드 데이터 부분
             // 기존 데이터 배열과 새로 받아온 데이터 배열을 합쳐 새 배열을 만들고 state에 저장한다. 
-            const mergedData = instaData.concat(...fetchedData);
-            setInstaData(mergedData);
+            setInstaData([...instaData,...fetchedData]);
             setCrrentPage(currentPage + 1)
-         });
+            console.log("instaData",instaData);
       // 추가 데이터 로드 끝
+      setCrrentPage(currentPage+currentPage)
       setFetching(false);
    };
 
    
    useEffect(() => {
-      const endPoint = `${apiURL}movie/popular?api_key=${apiKey}&language=ko&page=1`
-      fetchData(endPoint)
+      fetchData()
    }, [])
 
    return (
-      <div style={{ width: "80%", margin: "0" }}>
-         <div style={{ width: "85%", margin: "1rem auto" ,height:"600px",overflow:"scroll"}} ref={messageEl}>
-            <h2>Infinite Scroll</h2>
+      <div className='noticePage'>
+         <h2 className='noticePageTitle'>Infinite Scroll</h2>
+         <div className='noticeInfiniteScroll' style={{ height:"600px"}} ref={messageEl}>
             <hr />
             {
                instaData.length > 0 &&
                instaData.map((data,index)=>(
-                  <div key={index}>
-                     {data.title}
+                  <div  key={index}>
+                     <div>
+                     <img src={data[1].fileURL} alt="" />
+                     <Link className='bbsanchor' to={`/gallery?galleryId=${data[0]}`}>{data[1].title}</Link>
+                     </div>
                   </div>
                ))
             }
@@ -74,4 +81,4 @@ function InfiniteScrolled() {
    )
 }
 
-export default InfiniteScrolled
+export default Gallerys
