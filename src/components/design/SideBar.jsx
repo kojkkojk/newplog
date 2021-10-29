@@ -37,6 +37,7 @@ function SideBar(props) {
                <>
                   <li className='sliderItems'><div><a className='domNavLinks' href='/' onClick={(e) => { e.preventDefault(); logoutFunc() }}>Logout</a></div></li>                  
                   <li className='sliderItems'><div><Link className='domNavLinks' to={"/create"}>create</Link></div></li>
+                  <li className='sliderItems'><div><Link className='domNavLinks' to={"/outstargram"}>img upload</Link></div></li>
                </>
                   :
                   <></>

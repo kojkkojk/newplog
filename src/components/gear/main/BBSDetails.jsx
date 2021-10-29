@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 function BBSDetails({ bbsType, docId, queryString,path,userOn }) {
-   const [document, setDocument] = useState({ title: "loading...", desc: "loading...", writer: "loading..." })
+   const [document, setDocument] = useState({ title: "loading...", desc: "loading..." })
    const dbRef = doc(firestore, `BBS/STORY/${bbsType}`, `${docId}`)
    const [show, setShow] = useState(false);
    const docSnap = getDoc(dbRef);
@@ -26,6 +26,11 @@ function BBSDetails({ bbsType, docId, queryString,path,userOn }) {
    return (
       <div className='noticePage'>
          <h2 className='noticePageTitle'>{document.title}</h2>
+         {document.fileURL && 
+         <div className='noticePageIMGDIV'>
+            <img className='noticePageIMG' src={document.fileURL} alt={document.fileName} />
+         </div>
+         }
          <div className='noticePageDesc'>{parse(document.desc)}</div>
          <div className='noticePageButton'>
             <ul>

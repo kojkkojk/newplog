@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Editor5 from '../../design/Editor5';
 import { useSelector,useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import { collection, doc,getDoc ,updateDoc } from "firebase/firestore";
+import { doc,getDoc ,updateDoc } from "firebase/firestore";
 import { firestore } from '../../../configs/firebase'
 import Modal from 'react-bootstrap/Modal';
 import { useHistory,useParams } from 'react-router-dom';
@@ -14,6 +14,13 @@ function Update({contentsIndex}) {
    const [contents, setContents] = useState("");
    const [contentTitle, setContentTitle] = useState("")
 
+   const storage = JSON.parse(localStorage["persist:infos"]);
+   const userStore = JSON.parse(storage.authReducer);
+   const isLogin = () => !!userStore.userData
+   if(isLogin() === false){
+      alert("로그인이 필요합니다")
+      document.location.href="/"
+   }
    const dispatch = useDispatch();
    const [show, setShow] = useState(false);
 
@@ -52,10 +59,12 @@ function Update({contentsIndex}) {
    return (
       <div className='WriteSect'>
          <div className='contentsTitle'>
-            <h2>글쓰기</h2>
+            <h2>글 수정</h2>
+            <div className='contentsTitleDiv'>            
             <input type="text" value={contentTitle} onChange={(e)=>{
                setContentTitle(e.target.value)
             }}/>
+            </div>
          </div>
          <div className='editorsSect'>
             <Editor5 data={contents}/>

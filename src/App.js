@@ -9,7 +9,10 @@ import PublicRoute from './components/gear/Public-Private/PublicRoute';
 import Write from './components/gear/main/Write';
 import PrivateRoute from './components/gear/Public-Private/PrivateRoute';
 import Update from './components/gear/main/Update';
+import IMGUpload from './components/gear/main/IMGUpload';
+import GalleryRouting from './components/gear/Routing/GalleryRouting';
 import Prologue from './components/gear/sub/Prologue';
+import InfiniteScrolled from './components/gear/main/InfiniteScrolled'
 /*Modules*/
 import { useQuery } from './configs/querySetting';
 import { Switch, Route } from 'react-router-dom';
@@ -37,10 +40,13 @@ function App() {
           <Route exact path="/" component={Home} />
           <PublicRoute restricted={true} component={LoginPage} path={"/login"} exact></PublicRoute>
           <PrivateRoute component={Write} path="/create" exact></PrivateRoute>
-          <PrivateRoute render={()=>{<Update contentsIndex={query.get("contentid")}/>}} path="/update/:updateIndex" exact></PrivateRoute>
+          <PrivateRoute component={IMGUpload} path="/outstargram" exact></PrivateRoute>
+          <Route path={"/update/:updateIndex"}><Update contentsIndex={query.get("contentid")}/></Route>
           <Route path={"/notice"} ><NoticeRouting userOn={userOn} noticeId={query.get("noticeId")} /></Route>
+          <Route path={"/gallery"} ><GalleryRouting userOn={userOn} galleryId={query.get("galleryId")}/></Route>
           <Route path={"/freeBoard"}><BBSRouting userOn={userOn} bbsId={query.get("freebbs")} /></Route>
           <Route path={"/prologue"}><Prologue/></Route>
+          <Route path={"/InfiniteScrolled"}><InfiniteScrolled/></Route>
           <Route path={"/"}>404 ERORR</Route>
         </Switch>
         <SideBar userOn={userOn}/>
