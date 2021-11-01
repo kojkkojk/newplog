@@ -1,5 +1,6 @@
 import React from 'react';
 import List from '../sub/List';
+import TODO from '../sub/TODO';
 
 function Home() {
    return (
@@ -13,6 +14,7 @@ function Home() {
                <List bbsName={"bbs2"} path={"freeBoard"} queryString={"freebbs"}/>
             </div>
             <div className='mainJo'>
+               <TODO/>
             </div>
          </div>
    )

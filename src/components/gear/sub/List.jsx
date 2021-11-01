@@ -2,17 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { firestore } from '../../../configs/firebase';
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from 'react-router-dom'
-function List({bbsName,path,queryString}) {
+function List({ bbsName, path, queryString }) {
 
    const db = getDocs(collection(firestore, "BBS", `STORY/${bbsName}`));
-
+   const cutTitle = (a) => {
+      let b = a.slice(0, 20);
+      return b + "..."
+   }
 
    const [listData, setListData] = useState([
-      ["loading...", { title: "loading...", desc: "loading...",writer:"loading..." }],
-      ["loading...", { title: "loading...", desc: "loading...",writer:"loading..." }],
-      ["loading...", { title: "loading...", desc: "loading...",writer:"loading..." }],
-      ["loading...", { title: "loading...", desc: "loading...",writer:"loading..." }],
-      ["loading...", { title: "loading...", desc: "loading...",writer:"loading..." }],
+      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }],
+      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }],
+      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }],
+      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }],
+      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }],
    ])
    useEffect(() => {
       db.then(data => {
@@ -21,17 +24,19 @@ function List({bbsName,path,queryString}) {
             emptyArr.push([doc.id, doc.data()])
          })
          emptyArr.sort((a, b) => b[1].index - a[1].index)
-         let a = emptyArr.slice(0,5)
+         let a = emptyArr.slice(0, 5)
          setListData(a)
       })
    }, [])
-   
+
    return (
       <div className='bbsThumb'>
          <div><Link className='bbsLINKs' to={`/${path}`}>more</Link></div>
          {listData.map((data, index) => (
             <div className='bbsLists' key={index}>
-               <h4><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{data[1].title}</Link></h4>
+               <h5><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{
+                  data[1].title.length < 20 ? data[1].title : cutTitle(data[1].title)
+               }</Link></h5>
             </div>
          ))}
       </div>

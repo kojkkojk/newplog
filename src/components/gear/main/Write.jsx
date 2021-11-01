@@ -11,6 +11,7 @@ import { deleteContents } from '../../../redux/action/createAct';
 function Write() {
    const [contents, setContents] = useState("");
    const [contentTitle, setContentTitle] = useState("")
+   const [category, setCategory] = useState("일반")
    const [bbsType, setbbsType] = useState("bbs1")
    const dispatch = useDispatch();
    const [show, setShow] = useState(false);
@@ -24,6 +25,7 @@ function Write() {
          await addDoc(collection(firestore, `BBS/STORY/${bbsType}`), {
             title: contentTitle,
             desc: contents,
+            category:category,
             date: currentDate.toLocaleDateString(),
             index: currentDate.getTime()
          })
@@ -39,12 +41,14 @@ function Write() {
          <div className='contentsTitle'>
             <h2>create contents</h2>
             <div className='contentsTitleDiv'>
-               <select name="doc" id="doc-select" onChange={(e) => {
-                  setbbsType(e.target.value)
+               <select name="category" id="doc-select" onChange={(e)=>{
+                  setCategory(e.target.value)
                }}>
-                  <option value="bbs1">공지</option>
-                  <option value="bbs2">자유게시판</option>
+                  <option value="일반">일반</option>
+                  <option value="중요">중요</option>
+                  <option value="기타">기타</option>
                </select>
+
                <input type="text" onChange={(e) => {
                   setContentTitle(e.currentTarget.value);
                }} />
@@ -54,6 +58,12 @@ function Write() {
             <Editor5 data={""} />
          </div>
          <div className="confirm">
+            <select style={{height:"100%"}} name="doc" id="doc-select" onChange={(e) => {
+               setbbsType(e.target.value)
+            }}>
+               <option value="bbs1">공지</option>
+               <option value="bbs2">자유게시판</option>
+            </select>
             <Button onClick={handleShow}>Save</Button>
             <Modal show={show} onHide={handleClose}>
                <Modal.Body>

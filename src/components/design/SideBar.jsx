@@ -3,7 +3,6 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Ads from '../design/Ads';
 import { Link, useHistory } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
-
 const listyle = {
    height: "40px"
 }
@@ -16,7 +15,7 @@ function SideBar(props) {
       signOut(auth).then(() => { history.push("/") })
    }
    return (
-      <div className='SideBar'>
+      <div className='SideBar' id={`slide_${props.slides}`}>
          <div className='menuvertical'>
             <ul className='slideVetical'>
                <li className='sliderItems'><div><Link className='domNavLinks' to={"/"}>home</Link></div></li>
@@ -32,7 +31,6 @@ function SideBar(props) {
                      </ul>
                   </div>
                </li>
-               <li className='sliderItems'><div><Link className='domNavLinks' to={"/notice"}>Notice</Link></div></li>
                {props.userOn ?
                <>
                   <li className='sliderItems'><div><a className='domNavLinks' href='/' onClick={(e) => { e.preventDefault(); logoutFunc() }}>Logout</a></div></li>                  

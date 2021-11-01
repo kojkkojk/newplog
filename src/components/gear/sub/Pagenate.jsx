@@ -53,9 +53,9 @@ function Pagenate({ bbsType, bbsTitle, path, queryString }) {
                   {posts.length > 0 &&
                      posts.map((data, index) => (
                         <tr key={index}>
-                           <td className='listContents'>{data[1].index}</td>
+                           <td className='listContents'>{data[1].category}</td>
                            <td className='listContents'>
-                              <h3><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{data[1].title}</Link></h3>
+                              <strong><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{data[1].title}</Link></strong>
                            </td>
                            <td className='listContents'>{data[1].date}</td>
                         </tr>

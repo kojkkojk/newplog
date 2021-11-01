@@ -19,12 +19,17 @@ import { useDispatch } from 'react-redux';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { loginUser } from './redux/action/authAct'
 import { useEffect, useState } from 'react';
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 function App() {
   const query = useQuery();
   const auth = getAuth();
   const [userOn, setUserOn] = useState(null);
+  const [slides, setSlides] = useState(false);
   const dispatch = useDispatch();
+  const handleSide = ()=>{
+    setSlides(!slides)
+  }
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       setUserOn(user)
@@ -47,7 +52,10 @@ function App() {
           <Route path={"/prologue"}><Prologue/></Route>
           <Route path={"/"}>404 ERORR</Route>
         </Switch>
-        <SideBar userOn={userOn}/>
+        <div class="bbtn" onClick={handleSide}>
+          <GiHamburgerMenu/>
+        </div>
+        <SideBar userOn={userOn} slides={slides}/>
       </div>
     </div>
   );

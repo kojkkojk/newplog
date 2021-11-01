@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 function LoginPage() {
