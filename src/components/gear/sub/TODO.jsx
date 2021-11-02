@@ -3,15 +3,14 @@ import { getDatabase, ref, onValue } from "firebase/database";
 
 function TODO() {
    const db = getDatabase();
-   const starCountRef = ref(db, 'todolist');
+   const starCountRef = ref(db, 'events/list/20211102');
    const [test, settest] = useState([
-      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }],
-      ["loading...", { title: "loading...", desc: "loading...", writer: "loading..." }]
    ])
    useEffect(() => {
       onValue(starCountRef, (datas) => {
          const data = Object.entries(datas.val());
          settest(data)
+         console.log(data);
       });
    }, [])
 
@@ -24,7 +23,7 @@ function TODO() {
                   <li key={index}>
                      <ul>
                         <li>{datas[0]}</li>
-                        <li>{datas[1].name}</li>
+                        <li>{datas[1]}</li>
                      </ul>
                   </li>
                ))

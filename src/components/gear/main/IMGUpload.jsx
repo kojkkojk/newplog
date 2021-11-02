@@ -94,7 +94,7 @@ function IMGUpload() {
                         dispatch(deleteContents())
                         saveContents().then(() => {
                            alert("저장되었습니다.")
-                           history.push("/");
+                           history.push("/gallery");
                         })
                      }
                   }}>

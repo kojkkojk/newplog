@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //React-router
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 //Redux
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
@@ -15,15 +15,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 const persistor = persistStore(store)
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Router>
           <App />
         </Router>
       </PersistGate>
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('ploged')
 );
 

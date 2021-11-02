@@ -16,6 +16,7 @@ function LoginPage() {
       })
    }
    const history = useHistory();
+   
    const loginFunc = async(data)=>{
       await signInWithEmailAndPassword(auth,data.email,data.password).then(userData=>{
          setLoading(true)

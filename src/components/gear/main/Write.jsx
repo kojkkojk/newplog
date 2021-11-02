@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Editor5 from '../../design/Editor5';
 import { useSelector, useDispatch } from 'react-redux';
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { collection, addDoc } from "firebase/firestore";
 import { firestore } from '../../../configs/firebase'
-import Modal from 'react-bootstrap/Modal';
 import { useHistory } from 'react-router-dom';
 import { deleteContents } from '../../../redux/action/createAct';
 

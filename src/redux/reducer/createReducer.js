@@ -1,20 +1,20 @@
-import {WRITE_CONTENTS,DELETE_CONTENTS} from '../type';
+import { WRITE_CONTENTS, DELETE_CONTENTS } from '../type';
 
 const initialContent = {
-   content:""
+   content: ""
 }
 
-export default function createReducer(state=initialContent,action){
+export default function createReducer(state = initialContent, action) {
    switch (action.type) {
       case WRITE_CONTENTS:
          return {
             ...state,
-            content:action.payload
+            content: action.payload
          }
-      case DELETE_CONTENTS :
-         return{
+      case DELETE_CONTENTS:
+         return {
             ...state,
-            content:""
+            content: ""
          }
       default:
          return state;

@@ -89,27 +89,29 @@
    display: none;
 }
 .App{
-   margin: 10px 17% 10px 17%;
+   margin: 0 17%;
    min-height: 100vh;
 }
 .daemunIMG{
    display: flex;
-   font-family: 'EliceDigitalBaeum_Bold';
    justify-content: center;
-   font-size: 5rem;
    align-items: center;
-   text-shadow: 2px 1px 2px rgb(0, 0, 0);
+   font-family: 'EliceDigitalBaeum_Bold';
+   font-size: 5rem;
    width: 100%;
    height: 200px;
+   background-image: url("https://images.unsplash.com/photo-1528565240216-4f2d07f99ffa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1020&q=80");
+   background-size: cover;
+   background-position: center left;
    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .daemunIMGLINK{
-   color: rgb(255, 19, 19);
+   color: rgb(255, 255, 255);
    text-decoration: none;
 }
-.daemunIMGLINK:hover{
-   color: rgb(255, 19, 19);
+.daemunIMGLINK:hover{   
+   color: rgb(255, 255, 255);
 }
 .SideBar{
    width: 20%;
@@ -487,8 +489,11 @@
 .infinitescrolls{
    display: flex;
    justify-content: center;
+   align-items: center;
    margin-top: 7px;
    height: 50px;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 .infinitescrolls>button{
    border: none;
@@ -497,6 +502,11 @@
    height: 80%;
    background-color: rgb(67, 167, 0);
    color: white;
+   font-weight: 800;
+   transition: 0.25s;
+}
+.infinitescrolls>button:hover{
+   background-color: rgb(87, 218, 0);
 }
 /*********************noticePage END**************************/
 /****************************WriteSect***********************/
@@ -557,38 +567,176 @@
    margin-right: 8px;
 }
 /**************************WriteSect END*********************/
+/****************************Prologue************************/
+#boxSahdows{   
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+   padding: 8px;
+   margin-bottom: 7px;
+}
+.Prologue{
+   font-family: 'Iropke Batang', serif; 
+   width: 80%;   
+   display: flex;
+   flex-direction: column;
+   padding: 0 15px 0 0;
+}
+/**************************Prologue END**********************/
+/************************************Calendar***************/
+.CalenderBody{   
+   width: 100%;
+   display: flex;
+}
+.calender{
+   width: 45%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-family: 'KyoboHand';
+}
+.eventShow{
+   width: 55%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+#calsBox{
+   padding: 15px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.달력상단부{margin-bottom: 2px;}
+.달력상단부>div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   margin: 0 1px;
+   height: 30px;
+   border: lightgrey 1px solid;
+   cursor: pointer;
+}
+#calsBox>div{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#calsBox>div>button{
+   width: 50%;
+   height: 30px;
+   border: none;
+   margin: 0 2px;
+   background-color: transparent;
+   border: lightgrey 1px solid;
+   cursor: pointer;
+}
+#calsBox>div>button:hover{
+   background-color: rgba(216, 191, 216, 0.295);
+}
+.cals{
+   width: 100%;
+   height: 100%;
+   text-align: center;
+}
+.cals>thead>tr{
+   display: grid;
+   grid-template-columns: repeat(7,1fr);
+}
+.cals>thead>tr>th{
+   border: 1px solid lightgray;
+   height: 25px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: 3px;
+}
+.cals>thead>tr>th:nth-child(1){
+   color: rgb(255, 59, 59);
+}
+.cals>thead>tr>th:nth-child(7){
+   color: rgb(50, 50, 255);
+}
+.cals>tbody>tr{
+   display: grid;
+   grid-template-columns: repeat(7,1fr);
+}
+.cals>tbody>tr>td{
+   border: 1px solid lightgray;
+   height: 30px;
+   cursor: pointer;
+   margin: 3px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.realCal>tr>td:nth-child(1){
+   color: rgb(255, 59, 59);
+}
+.realCal>tr>td:nth-child(7){
+   color: rgb(50, 50, 255);
+}
+.evenee{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 8px;
+   background: rgba(255, 255, 255, 0.089);
+   border-top: 1px solid rgba(255,255,255,0.5);
+   backdrop-filter: blur(8px);
+   box-shadow: 0 15px 25px rgba(194, 194, 194, 0.1);
+   width: 100%;
+   height: 35px;
+}
+.selected{background-color: rgba(40, 136, 131, 0.432); color: white;}
+.grayed{background-color:rgba(124, 124, 124, 0.219);}
+.이벤트추가{
+   width: 80%; 
+   padding: 0 15px 0 0;
+}
+.eventRecord{
+   width: 100%;
+   min-height: 150px;
+   list-style: none;
+   padding: 0;
+   display: flex;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+}
+.eventRecord>li{
+   width: 18.3%;
+   min-height: 150px;
+}
+.eventRecord>li:nth-child(2){
+   width: 45%;
+}
+.eventRecord>li>ul{
+   padding: 0;
+   list-style: none;
+}
+.eventRecord>li>ul>li{
+   padding: 0 4px;
+   margin-bottom: 3px;
+}
+.eventRecord>li>ul>li>input{
+   width: 100%;
+}
+/****************************Calendar END*******************/
 @media screen and (max-width: 910px) { 
-   .App{
-      margin: 0 3.4%;
-   }
-   .daemunIMG {
-      font-size: 4rem;    
-      height: 150px;
-  }
-   .homehwamyun {
-      margin-top: 20px;
-      min-height: 76vh;
-      display: flex;
-      flex-direction: column;
-   }
-  .mainSect {
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      padding: 0;
-   }
-   .mainJogack {
-      margin-right: 2px;
-      width: 100%;
-      height: 330px;
-  }
-  .bbsThumb {
-      padding-top:15.5px;
-   }
-   .mainJo {
-      height: 350px;
-  }
-  .SideBar {
+   .App{margin: 0 3.4%;}
+   .daemunIMG {font-size: 4rem; height: 150px;}
+   .homehwamyun {margin-top: 20px; min-height: 76vh; display: flex; flex-direction: column;}
+   .mainSect {display: flex; width: 100%; flex-direction: column; padding: 0;}
+   .mainJogack {margin-right: 2px; width: 100%;}
+   .bbsThumb { padding-top:15.5px;}
+   .CalenderBody{ flex-direction: column; }.eventShow,.calender{width: 100%;}
+   .SideBar {
       width: 158px;
       box-shadow: 2px 2px 11px 1px rgb(0 0 0 / 23%);display: block;
       position: fixed;
@@ -604,6 +752,10 @@
    }
    .bbtn{
       display: block;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: white;
+      background-color: lightgreen;
       position: fixed;
       right: 0px;
       bottom: 0px;
@@ -613,13 +765,11 @@
       -moz-transition: All 0.4s ease;
       -o-transition: All 0.4s ease;
    }
-   #slide_true {
-      right: 0px;
-    }
+   #slide_true {right: 0px;}
    .sliderItems,.sliderItem{
       padding: 0;
    }
-   .noticePage,.LoginPage,.WriteSect{
+   .noticePage,.LoginPage,.WriteSect,.Prologue{
       width: 100%;
       padding: 0;
    }
@@ -632,9 +782,12 @@
    .listContents:nth-child(2) {
       text-align: left;
       padding-left: 5px;
-  }
-  .imgName{
-     display: grid;
-     grid-template-columns: repeat(2,1fr);
-  }
+   }
+   .imgName{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+   }
+   .noticePageDesc{
+     max-height: 500px;
+   }
 }

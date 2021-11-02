@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Ads from '../design/Ads';
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
+import { useSelector } from 'react-redux';
+
 const listyle = {
    height: "40px"
 }
 
 function SideBar(props) {
    const auth = getAuth()
-   const history = useHistory()
    const [OnOff, setOnOff] = useState(false);
    const logoutFunc = () => {
-      signOut(auth).then(() => { history.push("/") })
+      signOut(auth)
    }
    return (
       <div className='SideBar' id={`slide_${props.slides}`}>
@@ -32,11 +33,12 @@ function SideBar(props) {
                   </div>
                </li>
                {props.userOn ?
-               <>
-                  <li className='sliderItems'><div><a className='domNavLinks' href='/' onClick={(e) => { e.preventDefault(); logoutFunc() }}>Logout</a></div></li>                  
-                  <li className='sliderItems'><div><Link className='domNavLinks' to={"/create"}>create</Link></div></li>
-                  <li className='sliderItems'><div><Link className='domNavLinks' to={"/outstargram"}>img upload</Link></div></li>
-               </>
+                  <>
+                     <li className='sliderItems'><div><a className='domNavLinks' href='/' onClick={(e) => { e.preventDefault(); logoutFunc() }}>Logout</a></div></li>
+                     <li className='sliderItems'><div><Link className='domNavLinks' to={"/create"}>create</Link></div></li>
+                     <li className='sliderItems'><div><Link className='domNavLinks' to={"/outstargram"}>img upload</Link></div></li>
+                     <li className='sliderItems'><div><Link className='domNavLinks' to={"/eventplus"}>schedule</Link></div></li>
+                  </>
                   :
                   <></>
                }

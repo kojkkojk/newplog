@@ -53,7 +53,7 @@ function BBSDetails({ bbsType, docId, queryString,path,userOn }) {
                   </Button>
                   <Button variant="primary" onClick={()=>{
                      deletedDoc().then(()=>{
-                        history.push("/")
+                        history.push(`/${path}`)
                      })
                   }}>
                      삭제하기

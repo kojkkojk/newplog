@@ -12,14 +12,17 @@ import Update from './components/gear/main/Update';
 import IMGUpload from './components/gear/main/IMGUpload';
 import GalleryRouting from './components/gear/Routing/GalleryRouting';
 import Prologue from './components/gear/sub/Prologue';
+import Event from './components/gear/main/Event';
+
 /*Modules*/
+import { useEffect, useState } from 'react';
 import { useQuery } from './configs/querySetting';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { loginUser } from './redux/action/authAct'
-import { useEffect, useState } from 'react';
-import {GiHamburgerMenu} from 'react-icons/gi'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { hashremember } from './redux/action/hashact';
 
 function App() {
   const query = useQuery();
@@ -27,35 +30,51 @@ function App() {
   const [userOn, setUserOn] = useState(null);
   const [slides, setSlides] = useState(false);
   const dispatch = useDispatch();
-  const handleSide = ()=>{
+  const history = useHistory()
+  const nowHash = window.location.hash
+  
+  const handleSide = () => {
     setSlides(!slides)
   }
+  const hashChange = () => {
+    setSlides(false)
+  }
+
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       setUserOn(user)
       dispatch(loginUser(user))
     })
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(hashremember())
+  }, [nowHash])
+
   return (
     <div className="App">
-      <Top/>
+      <Top />
       <div className='homehwamyun'>
         <Switch>
           <Route exact path="/" component={Home} />
           <PublicRoute restricted={true} component={LoginPage} path={"/login"} exact></PublicRoute>
           <PrivateRoute component={Write} path="/create" exact></PrivateRoute>
           <PrivateRoute component={IMGUpload} path="/outstargram" exact></PrivateRoute>
-          <Route path={"/update/:updateIndex"}><Update contentsIndex={query.get("contentid")}/></Route>
+          <PrivateRoute component={Event} path="/eventplus" exact></PrivateRoute>
+          <Route path={"/update/:updateIndex"}><Update contentsIndex={query.get("contentid")} /></Route>
           <Route path={"/notice"} ><NoticeRouting userOn={userOn} noticeId={query.get("noticeId")} /></Route>
-          <Route path={"/gallery"} ><GalleryRouting userOn={userOn} galleryId={query.get("galleryId")}/></Route>
+          <Route path={"/gallery"} ><GalleryRouting userOn={userOn} galleryId={query.get("galleryId")} /></Route>
           <Route path={"/freeBoard"}><BBSRouting userOn={userOn} bbsId={query.get("freebbs")} /></Route>
-          <Route path={"/prologue"}><Prologue/></Route>
+          <Route path={"/prologue"}><Prologue /></Route>
           <Route path={"/"}>404 ERORR</Route>
         </Switch>
-        <div class="bbtn" onClick={handleSide}>
-          <GiHamburgerMenu/>
+        <div className="bbtn" onClick={() => {
+          handleSide()
+          window.onhashchange = hashChange
+        }}>
+          <GiHamburgerMenu />
         </div>
-        <SideBar userOn={userOn} slides={slides}/>
+        <SideBar userOn={userOn} slides={slides} />
       </div>
     </div>
   );
