@@ -217,6 +217,7 @@
 .mainJogack{
    margin: 0 2px 10px 0;
    width: 100%;
+   min-height: 350px;
 }
 .mainJo{
    width: 100%;

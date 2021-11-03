@@ -1,6 +1,7 @@
 import React from 'react';
 import List from '../sub/List';
 import Calendar from '../../design/Calendar';
+import Rank from '../sub/Rank';
 
 function Home() {
    return (
@@ -24,7 +25,7 @@ function Home() {
 
          <div className='mainJogack'>
             <div className='메인아래왼쪽'>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur velit assumenda voluptates illo? Ipsum asperiores quas voluptatem dolorem amet consequatur molestiae nostrum fugit tempore delectus. Aperiam aliquid aut sit?
+               <Rank/>
             </div>
          </div>
       </div>

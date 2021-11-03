@@ -1,15 +1,8 @@
-let a = [1,2,3];
-let b = ["a","b","c"];
-let c = []
+let c = "2014772";
 
-c.push(...a,...b)
-
-function aaaaa(b,c){
-   let sc = []
-   sc.push(...b,...c)
-   return sc
+function a(ss){
+   let d = Number.parseInt(ss)
+   return d.toLocaleString()
 }
 
-console.log(c);
-
-console.log(aaaaa(a,b));
+console.log(a(c));
