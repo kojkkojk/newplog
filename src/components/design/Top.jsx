@@ -4,7 +4,7 @@ function Top() {
    return (
       <div className='daemunIMG'>
          <Link className='daemunIMGLINK' to={"/"}>
-            HI
+            Hamoonrag's Plog
          </Link>
       </div>
    )
