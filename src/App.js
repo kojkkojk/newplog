@@ -22,7 +22,6 @@ import { useDispatch } from 'react-redux';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { loginUser } from './redux/action/authAct'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { hashremember } from './redux/action/hashact';
 
 function App() {
   const query = useQuery();
@@ -30,8 +29,6 @@ function App() {
   const [userOn, setUserOn] = useState(null);
   const [slides, setSlides] = useState(false);
   const dispatch = useDispatch();
-  const history = useHistory()
-  const nowHash = window.location.hash
   
   const handleSide = () => {
     setSlides(!slides)
@@ -47,9 +44,6 @@ function App() {
     })
   }, [dispatch])
 
-  useEffect(() => {
-    dispatch(hashremember())
-  }, [nowHash])
 
   return (
     <div className="App">

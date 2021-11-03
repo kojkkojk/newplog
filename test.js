@@ -1,8 +1,15 @@
-const cut = (a)=>{
-   let b = a.slice(0,5);
-   return b+"..."
+let a = [1,2,3];
+let b = ["a","b","c"];
+let c = []
+
+c.push(...a,...b)
+
+function aaaaa(b,c){
+   let sc = []
+   sc.push(...b,...c)
+   return sc
 }
 
-let a = "가나다라마바사아자차카타파하";
+console.log(c);
 
-console.log(cut(a));
+console.log(aaaaa(a,b));

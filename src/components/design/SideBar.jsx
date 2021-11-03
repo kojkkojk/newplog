@@ -3,8 +3,6 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Ads from '../design/Ads';
 import { Link } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
-import { useSelector } from 'react-redux';
-
 const listyle = {
    height: "40px"
 }

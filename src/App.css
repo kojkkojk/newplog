@@ -62,14 +62,15 @@
    height: 45px;
    justify-content: center;
    align-items: center;
+   margin: 0;
 }
 .pagination>li{
    list-style: none;
    width: 40px;
    height: 40px;
    margin: 0 5px;
-   display: flex;
    font-weight: 600;
+   display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
@@ -208,30 +209,41 @@
    flex-wrap: wrap;
 }
 .mainSect{
-   display: flex;
    width: 80%;
-   flex-wrap: wrap;
-   padding: 0 3.45px;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   padding: 0 3.5px 0 0;
 }
 .mainJogack{
    margin: 0 2px 10px 0;
-   width: 49.79%;
+   width: 100%;
 }
 .mainJo{
    width: 100%;
+   height: 60%;
    margin: 2px 7px 0 5px;
-   height: 550px;
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   border: 1px lightgrey solid;
+}
+.메인아래오른쪽{
+   min-height: 100%;
+   margin: 0 7px;
+   padding: 0 5px;
+   -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
+   box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
+}
+.메인아래왼쪽{
+   min-height: 100%;
+   margin: 0 7px;
+   padding: 5px;
    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
 }
 /***************************homehwamyun END***********************/
 /**************************bbsThumb******************************/
 .bbsThumb{
-   height: 255px;
+   min-height: 80%;
    border-left: 1px lightgrey solid;
    border-bottom: 1px lightgrey solid;
    border-right: 1px lightgrey solid;
@@ -273,10 +285,8 @@
 .bbsLists{
    display: flex;
    align-items: center;
-   height: 35px;
+   height: 40px;
    padding:  0 9.5px 0 42px;
-   font-size: large;
-   margin-bottom: 7px;
 }
 .bbsLINKs{
    text-decoration: none;
@@ -586,6 +596,7 @@
 .CalenderBody{   
    width: 100%;
    display: flex;
+   font-family: 'KyoboHand';
 }
 .calender{
    width: 45%;
@@ -593,23 +604,64 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   font-family: 'KyoboHand';
 }
 .eventShow{
    width: 55%;
    height: 100%;
+   padding: 15px 5px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
 }
-#calsBox{
-   padding: 15px;
+.eventShow>span{
+   height: 30px;
    width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 5px;
+   align-items: center;
+   border: 1px solid lightgray;
+}
+.eventShow>ul{
+   height: auto;
+   width: 100%;
+   padding: 0;
+   margin: 0;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   list-style: none;
+}
+.eventShow>ul>li{
+   display: flex;
+   width: 100%;
+   margin-bottom: 5px;
+}
+.eventShow>ul>li>div{
+   width: 15%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid lightgray;
+}
+.eventShow>ul>li>span{
+   width: 85%;
+   margin-left: 2.25px;
+   text-align: center;
+   border: 1px solid lightgray;
+}
+.eventShow>ul>li>div::before{
+   content: "✔";
+}
+#calsBox{
+   padding: 15px 0;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
 .달력상단부{margin-bottom: 2px;}
 .달력상단부>div{
@@ -712,12 +764,18 @@
 .eventRecord>li{
    width: 18.3%;
    min-height: 150px;
+   display: flex;
+   justify-content: center;
+}
+.eventRecord>li>button{
+   height: 50px;
 }
 .eventRecord>li:nth-child(2){
    width: 45%;
 }
 .eventRecord>li>ul{
    padding: 0;
+   width: 100%;
    list-style: none;
 }
 .eventRecord>li>ul>li{

@@ -102,12 +102,12 @@ function Calendar() {
             </div>
          </div>
          <div className='eventShow'>
-            <h2>일정</h2>
+            <span>일정</span>
             <ul>
                {eventList.length > 0 &&
                   eventList.map((data, index) => (
                      <React.Fragment key={index}>
-                        <li>{data[1]}</li>
+                        <li><div/><span>{data[1]}</span></li>
                      </React.Fragment>
                   ))
                }

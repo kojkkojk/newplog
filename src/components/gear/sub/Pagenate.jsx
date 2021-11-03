@@ -64,12 +64,14 @@ function Pagenate({ bbsType, bbsTitle, path, queryString }) {
                </tbody>
             </Table>
          </div>
-         <Pagination
-            postPerPage={postPerPage}
-            totalPosts={allPosts.length}
-            paginate={paginate}
-            currentPage={currentPage}
-         />
+         <div className='페이지하단'>
+            <Pagination
+               postPerPage={postPerPage}
+               totalPosts={allPosts.length}
+               paginate={paginate}
+               currentPage={currentPage}
+            />
+         </div>
       </>
    )
 }
