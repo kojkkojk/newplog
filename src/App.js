@@ -13,11 +13,12 @@ import IMGUpload from './components/gear/main/IMGUpload';
 import GalleryRouting from './components/gear/Routing/GalleryRouting';
 import Prologue from './components/gear/sub/Prologue';
 import Event from './components/gear/main/Event';
-
+import ToTop from './components/design/ToTop';
+import SettingPage from './components/gear/main/SettingPage'
 /*Modules*/
 import { useEffect, useState } from 'react';
 import { useQuery } from './configs/querySetting';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { loginUser } from './redux/action/authAct'
@@ -29,7 +30,7 @@ function App() {
   const [userOn, setUserOn] = useState(null);
   const [slides, setSlides] = useState(false);
   const dispatch = useDispatch();
-  
+
   const handleSide = () => {
     setSlides(!slides)
   }
@@ -44,9 +45,9 @@ function App() {
     })
   }, [dispatch])
 
-
   return (
     <div className="App">
+      <ToTop/>
       <Top />
       <div className='homehwamyun'>
         <Switch>
@@ -55,6 +56,7 @@ function App() {
           <PrivateRoute component={Write} path="/create" exact></PrivateRoute>
           <PrivateRoute component={IMGUpload} path="/outstargram" exact></PrivateRoute>
           <PrivateRoute component={Event} path="/eventplus" exact></PrivateRoute>
+          <PrivateRoute component={SettingPage} path="/controltower" exact></PrivateRoute>
           <Route path={"/update/:updateIndex"}><Update contentsIndex={query.get("contentid")} /></Route>
           <Route path={"/notice"} ><NoticeRouting userOn={userOn} noticeId={query.get("noticeId")} /></Route>
           <Route path={"/gallery"} ><GalleryRouting userOn={userOn} galleryId={query.get("galleryId")} /></Route>
@@ -66,7 +68,9 @@ function App() {
           handleSide()
           window.onhashchange = hashChange
         }}>
-          <GiHamburgerMenu />
+          <div className='bbttn'>
+            <GiHamburgerMenu />
+          </div>
         </div>
         <SideBar userOn={userOn} slides={slides} />
       </div>

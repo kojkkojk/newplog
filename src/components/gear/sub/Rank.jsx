@@ -9,7 +9,6 @@ function Rank() {
    const callApi = () => {
       axios.get(`${host}${DAILY_BOXOFFICE_URI}.json?key=${apiKey}&targetDt=${today}`).then(res => {
          let resData = res.data
-         console.log(resData);
          setRank(resData.boxOfficeResult.dailyBoxOfficeList)
       })
    }
@@ -17,13 +16,12 @@ function Rank() {
       let d = Number.parseInt(ss)
       return d.toLocaleString()
    }
-
    useEffect(() => {
       callApi()
    }, [])
-
    return (
       <>
+      <h2 className='claH2'>영화 순위<span>{new Date().toLocaleDateString()}기준</span></h2>
       <Table className='bbsTabless' striped bordered>
                <colgroup>
                   <col width={"10%"} />

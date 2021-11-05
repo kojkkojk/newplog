@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import Ads from '../design/Ads';
 import { Link } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
 const listyle = {
@@ -36,13 +35,13 @@ function SideBar(props) {
                      <li className='sliderItems'><div><Link className='domNavLinks' to={"/create"}>create</Link></div></li>
                      <li className='sliderItems'><div><Link className='domNavLinks' to={"/outstargram"}>img upload</Link></div></li>
                      <li className='sliderItems'><div><Link className='domNavLinks' to={"/eventplus"}>schedule</Link></div></li>
+                     <li className='sliderItems'><div><Link className='domNavLinks' to={"/controltower"}>setting</Link></div></li>
                   </>
                   :
                   <></>
                }
             </ul>
          </div>
-         <Ads />
       </div>
    )
 }

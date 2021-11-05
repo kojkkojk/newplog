@@ -19,6 +19,8 @@ const editorConfiguration = {
       "Link",
       "Undo",
       "Redo",
+      "|",
+      "HtmlEmbed"
    ]
 };
 

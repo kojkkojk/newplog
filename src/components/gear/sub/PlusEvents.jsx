@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { getDatabase, ref, set } from "firebase/database";
 import DatePicker from 'react-datepicker'
-import { AiFillSave } from "react-icons/ai";
 import "react-datepicker/dist/react-datepicker.css";
+import { AiFillSave,AiOutlinePlus } from "react-icons/ai";
 import { ko } from 'date-fns/esm/locale'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -72,8 +72,11 @@ function PlusEvents() {
                {listPlusFunc(listsPlus)}
             </ul>
          </li>
-         <li>
-            <Button variant='warning' onClick={handleShow}><AiFillSave />Save</Button>
+         <li style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <Button style={{width:"80%"}} onClick={() => { setListsPlus(listsPlus + 1) }}><AiOutlinePlus />추가</Button >
+         </li>
+         <li style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <Button style={{width:"80%"}} variant='warning' onClick={handleShow}><AiFillSave />Save</Button>
             <Modal show={show} onHide={handleClose}>
                <Modal.Body>
                   저장하시겠습니까?
@@ -92,9 +95,7 @@ function PlusEvents() {
                </Modal.Footer>
             </Modal>
          </li>
-         <li>
-            <Button onClick={() => { setListsPlus(listsPlus + 1) }}><AiFillSave />추가</Button >
-         </li>
+
       </ul>
    )
 }

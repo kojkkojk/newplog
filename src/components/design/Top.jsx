@@ -4,7 +4,9 @@ function Top() {
    return (
       <div className='daemunIMG'>
          <Link className='daemunIMGLINK' to={"/"}>
-            Hamoonrag's Plog
+            <h3>
+               Hamoonrag's Plog
+            </h3>
          </Link>
       </div>
    )
