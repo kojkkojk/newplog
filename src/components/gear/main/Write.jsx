@@ -20,6 +20,7 @@ function Write() {
    const handleShow = () => setShow(true);
    const currentDate = new Date();
    const currentContent = useSelector(state => state.createReducer.content);
+
    const saveContents = async () => {
       try {
          await addDoc(collection(firestore, `BBS/STORY/${bbsType}`), {
@@ -33,9 +34,11 @@ function Write() {
          alert("Error adding document: ", e);
       }
    }
+   
    useEffect(() => {
       setContents(currentContent)
    }, [currentContent])
+   
    return (
       <div className='WriteSect'>
          <div className='contentsTitle'>

@@ -1,6 +1,7 @@
 import React from 'react'
 import BBSboard from '../main/BBSboard';
 import BBSDetails from '../main/BBSDetails';
+
 function BBSRouting({bbsId,userOn}) {
    return (
       <>

@@ -56,6 +56,7 @@ function SettingPage() {
          alert("Something was wrong...", e)
       }
    }
+   
    function yyyyMMdd(date) {
       let y = date.getFullYear().toString()
       let m = date.getMonth() + 1

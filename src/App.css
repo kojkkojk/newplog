@@ -263,7 +263,7 @@
 .메인아래오른쪽{
    min-height: 100%;
    margin: 0 7px;
-   padding: 0 5px;
+   padding: 5px;
    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23); 
    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.23);
    display: flex;
@@ -454,7 +454,7 @@
    align-items: center;
 }
 .noticeInfiniteScroll{
-   height: 780px;
+   min-height: 780px;
 }
 .bbsTable{
    display: flex;

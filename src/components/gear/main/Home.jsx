@@ -19,7 +19,7 @@ function Home() {
 
          <div className='mainJogack'>
             <div className='메인아래오른쪽'>
-               <h2 className='claH2'>SCHEDULE<span></span></h2>
+               <h2 className='claH2'>일정</h2>
                <Calendar />
             </div>
          </div>

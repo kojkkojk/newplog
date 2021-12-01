@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import moment from 'moment';
 import Msg from './Msg';
 import { v4 as uuidv4 } from 'uuid';
-
+import {animal,colors} from '../../../configs/data'
 function Reply({ bbsType, docId }) {
    const db = getDatabase();
    const storeRef = doc(firestore, "CONDITIONS/REPLY")
@@ -16,12 +16,6 @@ function Reply({ bbsType, docId }) {
    })
    const [replys, setReplys] = useState("")
    const [loading, setLoading] = useState(false)
-   const [nickName] = useState([
-      "산양", "북극곰", "하마", "비둘기", "송아지", "돼지", "원숭이", "여우", "강아지", "티라노"
-   ])
-   const [colors] = useState([
-      "파랑", "빨강", "노랑", "초록", "분홍", "검정", "주황", "짙푸른", "보라", "하양"
-   ])
    const writeData = async (bbsType, docId, userId, data = {}) => {
       try {
          setLoading(true)
@@ -39,13 +33,13 @@ function Reply({ bbsType, docId }) {
    }
    const saveReply = () => {
       let random = Math.random().toString();
-      let i = Math.floor(Math.random() * 10);
-      let j = Math.floor(Math.random() * 10);
+      let i = Math.floor(Math.random() * 20);
+      let j = Math.floor(Math.random() * 20);
       let uid = uuidv4();
       let times = moment().format('YY-MM-DD');
       let data = {
          img: `https://www.gravatar.com/avatar/${random.slice(4, 13)}?d=identicon`,
-         writer: `익명의 ${colors[i]}${nickName[j]}`,
+         writer: `${colors[i]} ${animal[j]}`,
          reply: replys,
          index: new Date().getTime(),
          times: times
