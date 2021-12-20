@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import { getAuth, signOut } from "firebase/auth";
-import Calendar from './Calendar';
 
 const listyle = {
    height: "40px"
@@ -20,6 +19,7 @@ function SideBar(props) {
             <ul className='slideVetical'>
                <li className='sliderItems'><div><Link className='domNavLinks' to={"/"}>home</Link></div></li>
                <li className='sliderItems'><div><Link className='domNavLinks' to={"/prologue"}>prologue</Link></div></li>
+               <li className='sliderItems'><div><Link className='domNavLinks' to={"/dccon"}>dccon list</Link></div></li>
                <li className='sliderItem' style={OnOff ? {} : listyle}>
                   <div><a onClick={(e) => { e.preventDefault() }} className='domNavLinks' href={"/notice"}>board</a></div>
                   <div onClick={() => { setOnOff(!OnOff) }}>{OnOff ? <FaChevronUp /> : <FaChevronDown />}</div>

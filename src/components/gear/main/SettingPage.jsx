@@ -13,10 +13,13 @@ function SettingPage() {
    const [loading2, setLoading2] = useState(false)
    const [conditions, setconditions] = useState(true)
    const [repltDelete, setRepltDelete] = useState("댓글을 삭제합니까?")
+   const [dcconList, setDcconList] = useState("")
    const [startDate, setStartDate] = useState(new Date());
    const [Days, setDays] = useState(yyyyMMdd(new Date()))
    const allReplyref = ref(realDB, `Replys`)
    const storeRef = doc(firestore, "CONDITIONS/REPLY")
+   const dcconRef = doc(firestore, "DCCON/json")
+   const dcdconRef = doc(firestore, "DCCON/Lists")
    const docSnap = getDoc(storeRef);
 
    const allReplyDelete = async () => {
@@ -78,8 +81,27 @@ function SettingPage() {
       } catch (e) {
          alert("Error adding document: ", e);
       }
+   }   
+
+   const updateDCcon = async () => {
+      let dcconJson = JSON.parse(dcconList)
+      try {
+         await updateDoc(dcdconRef, {
+            list:[...dcconJson]
+         })
+      } catch (e) {
+         alert(e);
+      }
    }
-   
+   const updateDCcon2 = async()=>{
+      try {
+         await updateDoc(dcconRef, {
+            data:dcconList
+         })
+      } catch (e) {
+         alert(e);
+      }
+   }
    useEffect(() => {
       docSnap.then(data => {
          if (data.exists()) {
@@ -88,8 +110,17 @@ function SettingPage() {
          } else {
             alert("잘못된 접근입니다.")
          }
+      });
+      getDoc(dcconRef).then(data=>{
+         if (data.exists()) {
+            let abc = data.data()
+            setDcconList(abc.data);
+         } else {
+            alert("잘못된 접근입니다.")
+         }
       })
    }, [])
+
    return (
       <div className='SETTINGWANG'>
          <div className="replyDelete settingprince">
@@ -131,6 +162,12 @@ function SettingPage() {
             <Button variant='danger' disabled={loading2} onClick={()=>{
                eventsDelete(Days)
             }}>이벤트 삭제</Button>
+         </div>
+         <div className="dcconUpdate settingprince">
+            <textarea name="" id="" cols="30" rows="13" value={dcconList} onChange={(e)=>{
+               setDcconList(e.target.value)
+            }}></textarea>
+            <Button disabled={loading2} onClick={()=>{updateDCcon();updateDCcon2()}}>디시콘 업데이트</Button>
          </div>
       </div>
    )

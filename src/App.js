@@ -14,7 +14,8 @@ import GalleryRouting from './components/gear/Routing/GalleryRouting';
 import Prologue from './components/gear/sub/Prologue';
 import Event from './components/gear/main/Event';
 import ToTop from './components/design/ToTop';
-import SettingPage from './components/gear/main/SettingPage'
+import SettingPage from './components/gear/main/SettingPage';
+import Dccon from './components/gear/sub/Dccon';
 /*Modules*/
 import { useEffect, useState } from 'react';
 import { useQuery } from './configs/querySetting';
@@ -62,6 +63,7 @@ function App() {
           <Route path={"/gallery"} ><GalleryRouting userOn={userOn} galleryId={query.get("galleryId")} /></Route>
           <Route path={"/freeBoard"}><BBSRouting userOn={userOn} bbsId={query.get("freebbs")} /></Route>
           <Route path={"/prologue"}><Prologue /></Route>
+          <Route path={"/dccon"}><Dccon /></Route>
           <Route path={"/"}>404 ERORR</Route>
         </Switch>
         <div className="bbtn" onClick={() => {

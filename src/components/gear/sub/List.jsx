@@ -31,7 +31,6 @@ function List({ bbsName, path, queryString }) {
 
    return (
       <div className='bbsThumb'>
-         <div><Link className='bbsLINKs' to={`/${path}`}>more</Link></div>
          {listData.map((data, index) => (
             <div className='bbsLists' key={index}>
                <h5><Link className='bbsanchor' to={`/${path}?${queryString}=${data[0]}`}>{
