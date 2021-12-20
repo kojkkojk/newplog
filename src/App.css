@@ -991,6 +991,16 @@
    width: 100px;
    height: 100px;
 }
+@keyframes rotate_image {
+   100% {
+      transform: rotate(360deg);
+   }
+}
+img[src="https://kojkkojk.github.io/hamoonrang/dccon/images/볼트공중.png"] {
+   animation: rotate_image .5s linear infinite;
+   transform-origin: 50% 50%;
+}
+
 /******************************광고창 끝****************/
 @media screen and (max-width: 910px) { 
    .App{margin: 0 3.4%;}
